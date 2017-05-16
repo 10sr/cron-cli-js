@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/10sr/crond-js#readme",
   "dependencies": {
+    "cron": "^1.2.1",
     "minimist": "^1.2.0"
   }
 }

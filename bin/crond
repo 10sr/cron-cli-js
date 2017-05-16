@@ -2,7 +2,7 @@
 
 process.title = "crond";
 
-process.exit(main(process.argv));
+main(process.argv);
 
 function main(argv){
     var minimist = require("minimist");
@@ -10,7 +10,12 @@ function main(argv){
     var opts = minimist(argv.slice(2), {
         boolean: ["exit-on-failure"]
     });
-    console.dir(opts)
+    var crontab = opts._[0];
     var exitOnFailure = opts["exit-on-failure"];
-    return 0;
+
+    var crond = require("../lib");
+    crond.start(crontab, {
+        exitOnFailure: exitOnFailure
+    })
+    return;
 }
