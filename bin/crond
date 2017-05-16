@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+process.title = "crond";
+
+process.exit(main(process.argv));
+
+function main(argv){
+    var minimist = require("minimist");
+
+    var opts = minimist(argv.slice(2), {
+        boolean: ["exit-on-failure"]
+    });
+    console.dir(opts)
+    var exitOnFailure = opts["exit-on-failure"];
+    return 0;
+}

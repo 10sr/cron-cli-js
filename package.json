@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/10sr/crond-js/issues"
   },
-  "homepage": "https://github.com/10sr/crond-js#readme"
+  "homepage": "https://github.com/10sr/crond-js#readme",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
 }
