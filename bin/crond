@@ -12,10 +12,12 @@ function main(argv){
     });
     var crontab = opts._[0];
     var exitOnFailure = opts["exit-on-failure"];
+    var timeZone = opts["timezone"];
 
     var crond = require("../lib");
     crond.start(crontab, {
-        exitOnFailure: exitOnFailure
+        exitOnFailure: exitOnFailure,
+        timeZone: timeZone
     })
     return;
 }
