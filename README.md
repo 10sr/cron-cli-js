@@ -1,3 +1,8 @@
+[![NPM version](http://img.shields.io/npm/v/cron-cli.svg)](https://www.npmjs.com/package/cron-cli)
+[![Downloads](https://img.shields.io/npm/dm/cron-cli.svg)](https://www.npmjs.com/package/cron-cli)
+[![Build Status](https://travis-ci.org/10sr/cron-cli.svg?branch=master)](https://travis-ci.org/10sr/cron-cli)
+[![Dependency Status](https://david-dm.org/10sr/cron-cli.svg)](https://david-dm.org/10sr/cron-cli)
+
 cron-cli-js
 ========
 
