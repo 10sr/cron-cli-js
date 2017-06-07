@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Nodejs crond",
   "author": "10sr",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "homepage": "https://github.com/10sr/crond-js#readme",
   "repository": {
     "type": "git",

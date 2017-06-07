@@ -26,5 +26,7 @@ Usage
 License
 -------
 
-This software is released under MIT license. 
+Copyright (c) 2017 10sr <8.slashes@gmail.com>
+
+This software is licensed under the Apache License, Version 2.0
 See `LICENSE` for details.
