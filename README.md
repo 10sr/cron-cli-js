@@ -1,7 +1,7 @@
-crond-js
+cron-cli-js
 ========
 
-Crond command implemented in Nodejs
+Cron command implemented in Nodejs
 
 
 Overview
@@ -14,9 +14,9 @@ Write your crontab file as:
     # Runs 23 minutes 10 seconds after midn, 2am, 4am ..., everyday
     10 23 0-23/2 * * * echo bar 1>&2
 
-And start crond in foreground with that crontab file:
+And start cron in foreground with that crontab file:
 
-    $ crond ./crontab
+    $ cron ./crontab
 
 
 Usage
@@ -24,11 +24,11 @@ Usage
 
 ### Commandline Options
 
-    $ crond [--exit-on-failure] [--timezone <timeZone>] <crontab>
+    $ cron [--exit-on-failure] [--timezone <timeZone>] <crontab>
 
 | Option | Default  | Description |
 | ------ | -------- | ----------- |
-| `--exit-on-failure` | (None) | When given and any of jobs ends with status code other than 0, exit crond program with that status code |
+| `--exit-on-failure` | (None) | When given and any of jobs ends with status code other than 0, exit cron program with that status code |
 | `--timezone <timeZone>` | (None) | When given, set timezone for cron jobs |
 
 

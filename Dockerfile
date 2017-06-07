@@ -1,7 +1,7 @@
 FROM node:alpine
 
-LABEL maintainer="https://github.com/10sr/crond-js" \
-      description="Nodejs crond"
+LABEL maintainer="https://github.com/10sr/cron-cli-js" \
+      description="Nodejs Cron Command"
 
 ENV NODE_ENV=production
 
@@ -14,4 +14,4 @@ RUN npm install
 
 COPY . .
 
-CMD ["node", "bin/crond", "/etc/crontab"]
+CMD ["node", "bin/cron", "/etc/crontab"]
