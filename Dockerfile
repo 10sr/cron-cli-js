@@ -14,4 +14,4 @@ RUN npm install
 
 COPY . .
 
-CMD ["node", "bin/crond", "/etc/crontab"]
+CMD ["node", "bin/cron", "/etc/crontab"]
