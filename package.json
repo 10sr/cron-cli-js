@@ -1,5 +1,5 @@
 {
-  "name": "crond",
+  "name": "cron-cli",
   "version": "0.0.1",
   "description": "Nodejs crond",
   "author": "10sr",
