@@ -14,9 +14,7 @@ Overview
 
 Write your crontab file as:
 
-    # Runs every weekday (Monday through Friday) at 11:30:00 AM
     00 30 11 * * 1-5 echo foo
-    # Runs 23 minutes 10 seconds after midn, 2am, 4am ..., everyday
     10 23 0-23/2 * * * echo bar 1>&2
 
 And start cron in foreground with that crontab file:
@@ -41,7 +39,7 @@ Usage
 
 ### Crontab Format
 
-The crontab file should look like:
+A sample crontab file will look like:
 
     # sec min hour day month day-of-week command
     # Runs every weekday (Monday through Friday) at 11:30:00 AM
