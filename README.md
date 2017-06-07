@@ -24,11 +24,12 @@ Usage
 
 ### Commandline Options
 
-    $ crond [--exit-on-failure] <crontab>
+    $ crond [--exit-on-failure] [--timezone <timeZone>] <crontab>
 
-| Option               | Default  | Description |
-| -------------------- | -------- | ----------- |
-| `--exit-on-failure`  | (None)   | When given and any of jobs ends with status code other than 0, exit crond program with that status code |
+| Option | Default  | Description |
+| ------ | -------- | ----------- |
+| `--exit-on-failure` | (None) | When given and any of jobs ends with status code other than 0, exit crond program with that status code |
+| `--timezone <timeZone>` | (None) | When given, set timezone for cron jobs |
 
 
 
