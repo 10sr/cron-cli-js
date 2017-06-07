@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+process.title = "crond";
+
+main(process.argv);
+
+function main(argv){
+    var minimist = require("minimist");
+
+    var opts = minimist(argv.slice(2), {
+        boolean: ["exit-on-failure"]
+    });
+    var crontab = opts._[0];
+    var exitOnFailure = opts["exit-on-failure"];
+    var timeZone = opts["timezone"];
+
+    var crond = require("../lib");
+    crond.start(crontab, {
+        exitOnFailure: exitOnFailure,
+        timeZone: timeZone
+    })
+    return;
+}
