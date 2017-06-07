@@ -1,16 +1,16 @@
 {
   "name": "cron-cli",
   "version": "0.0.1",
-  "description": "Nodejs crond",
+  "description": "Nodejs cron command",
   "author": "10sr",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/10sr/crond-js#readme",
+  "homepage": "https://github.com/10sr/cron-cli-js#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/10sr/crond-js.git"
+    "url": "git+https://github.com/10sr/cron-cli-js.git"
   },
   "bugs": {
-    "url": "https://github.com/10sr/crond-js/issues"
+    "url": "https://github.com/10sr/cron-cli-js/issues"
   },
   "keywords": [
     "schedule",
@@ -20,7 +20,7 @@
     ""
   ],
   "bin": {
-    "crond": "bin/crond"
+    "cron": "bin/cron"
   },
   "main": "index.js",
   "scripts": {

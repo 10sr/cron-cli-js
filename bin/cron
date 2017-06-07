@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-process.title = "crond";
+process.title = "cron";
 
 main(process.argv);
 
@@ -14,8 +14,8 @@ function main(argv){
     var exitOnFailure = opts["exit-on-failure"];
     var timeZone = opts["timezone"];
 
-    var crond = require("../lib");
-    crond.start(crontab, {
+    var cron = require("../lib");
+    cron.start(crontab, {
         exitOnFailure: exitOnFailure,
         timeZone: timeZone
     })

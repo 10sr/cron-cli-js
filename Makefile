@@ -4,4 +4,4 @@ check:
 	./test/crontab.sh
 
 docker-build-local:
-	docker build -t local/node-crond .
+	docker build -t local/cron-cli-js .

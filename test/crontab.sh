@@ -5,7 +5,7 @@ timeout=$(which timeout || true)
 test -z "$timeout" && timeout=$(which gtimeout || true)
 test -n "$timeout"
 
-output=$(ARG=DEF $timeout 3 ./bin/crond ./test/crontab || true)
+output=$(ARG=DEF $timeout 3 ./bin/cron ./test/crontab || true)
 
 echo "$output" | grep ABCDEF
 
