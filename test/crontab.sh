@@ -16,3 +16,7 @@ test $? -eq 1
 $timeout 3 ./bin/crond --exit-on-failure ./test/crontab.exit_on_failure && true
 
 test $? -eq 20
+
+$timeout 3 ./bin/crond --timezone GMT ./test/crontab && true
+
+test $? -eq 124
