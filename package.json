@@ -12,6 +12,13 @@
   "bugs": {
     "url": "https://github.com/10sr/crond-js/issues"
   },
+  "keywords": [
+    "schedule",
+    "task",
+    "job",
+    "cron",
+    ""
+  ],
   "bin": {
     "crond": "bin/crond"
   },
