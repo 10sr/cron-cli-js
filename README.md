@@ -16,10 +16,22 @@ Write your crontab file as:
 
     00 30 11 * * 1-5 echo foo
     10 23 0-23/2 * * * echo bar 1>&2
+    * * * * * * echo baz && exit 10
 
 And start cron in foreground with that crontab file:
 
     $ cron ./crontab
+
+
+Outputs of jobs and their exit statuses are all printed to stdout:
+
+    { cronTime: '00 30 11 * * 1-5', command: 'echo foo' }
+    { cronTime: '10 23 0-23/2 * * *', command: 'echo bar 1>&2' }
+    { cronTime: '* * * * * *', command: 'echo baz && exit 10' }
+    echo baz && exit 10 | stdout: baz
+    echo baz && exit 10 | stderr: 
+    echo baz && exit 10 | exited with code 10
+    ...
 
 
 Usage
