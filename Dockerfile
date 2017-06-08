@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:8.0.0-alpine
 
 LABEL maintainer="https://github.com/10sr/cron-cli-js" \
       description="Nodejs Cron Command"
