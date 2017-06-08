@@ -1,6 +1,6 @@
 {
   "name": "cron-cli",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Nodejs cron command",
   "author": "10sr",
   "license": "Apache-2.0",
