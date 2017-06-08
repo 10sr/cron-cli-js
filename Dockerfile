@@ -3,6 +3,8 @@ FROM node:8.0.0-alpine
 LABEL maintainer="https://github.com/10sr/cron-cli-js" \
       description="Nodejs Cron Command"
 
+RUN apk add --update tini && rm -rf /var/cache/apk/*
+
 ENV NODE_ENV=production
 
 RUN mkdir -p /usr/src/app
@@ -14,4 +16,5 @@ RUN npm install
 
 COPY . .
 
+ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["node", "bin/cron", "/etc/crontab"]
