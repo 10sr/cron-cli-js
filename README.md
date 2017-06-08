@@ -3,6 +3,7 @@
 [![Dependency Status](https://david-dm.org/10sr/cron-cli-js.svg)](https://david-dm.org/10sr/cron-cli-js)
 [![Downloads](https://img.shields.io/npm/dm/cron-cli.svg)](https://www.npmjs.com/package/cron-cli)
 [![Docker Pulls](https://img.shields.io/docker/pulls/10sr/cron-js.svg)](https://hub.docker.com/r/10sr/cron-js)
+[![](https://images.microbadger.com/badges/version/10sr/cron-js.svg)](https://microbadger.com/images/10sr/cron-js "Get your own version badge on microbadger.com")
 
 cron-cli-js
 ========
