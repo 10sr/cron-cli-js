@@ -1,7 +1,8 @@
-[![NPM version](http://img.shields.io/npm/v/cron-cli.svg)](https://www.npmjs.com/package/cron-cli)
-[![Downloads](https://img.shields.io/npm/dm/cron-cli.svg)](https://www.npmjs.com/package/cron-cli)
 [![Build Status](https://travis-ci.org/10sr/cron-cli-js.svg?branch=master)](https://travis-ci.org/10sr/cron-cli-js)
+[![NPM version](http://img.shields.io/npm/v/cron-cli.svg)](https://www.npmjs.com/package/cron-cli)
 [![Dependency Status](https://david-dm.org/10sr/cron-cli-js.svg)](https://david-dm.org/10sr/cron-cli-js)
+[![Downloads](https://img.shields.io/npm/dm/cron-cli.svg)](https://www.npmjs.com/package/cron-cli)
+[![Docker Pulls](https://img.shields.io/docker/pulls/10sr/cron-js.svg)](https://hub.docker.com/r/10sr/cron-js)
 
 cron-cli-js
 ========
