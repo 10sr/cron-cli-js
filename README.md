@@ -41,12 +41,13 @@ Usage
 
 ### Commandline Options
 
-    $ cron [--exit-on-failure] [--timezone <timeZone>] <crontab>
+    $ cron [--exit-on-failure] [--timezone <timeZone>] [<mail options> ...] <crontab>
 
 | Option | Default  | Description |
 | ------ | -------- | ----------- |
 | `--exit-on-failure` | (None) | When given and any of jobs ends with status code other than 0, exit cron program with that status code |
 | `--timezone <timeZone>` | (None) | When given, set timezone for cron jobs |
+| `--mailto <address>`, `--smtp-host <host>`, `--smtp-port <port>`, `--smtp-user <user>`, `--smtp-pass <password>` | (None) | Email notifiction options: see below for details |
 
 
 
