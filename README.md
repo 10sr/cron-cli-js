@@ -5,10 +5,13 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/10sr/cron-js.svg)](https://hub.docker.com/r/10sr/cron-js)
 [![](https://images.microbadger.com/badges/version/10sr/cron-js.svg)](https://microbadger.com/images/10sr/cron-js "Get your own version badge on microbadger.com")
 
+
+
 cron-cli-js
 ========
 
 Cron command implemented in Nodejs
+
 
 
 Overview
@@ -16,37 +19,43 @@ Overview
 
 Write your crontab file as:
 
-    00 30 11 * * 1-5 echo foo
-    10 23 0-23/2 * * * echo bar 1>&2
-    * * * * * * echo baz && exit 10
+    */10 * * * * * echo CRONJOB.mbp `date`
 
 And start cron in foreground with that crontab file:
 
-    $ cron ./crontab
+    $ CRON_JS_MAILTO=user@example.com cron ./crontab
 
 
-Outputs of jobs and their exit statuses are all printed to stdout:
+`cron` sends all job outputs to stdout, and also send them to
+`user@example.com`.
 
-    { cronTime: '00 30 11 * * 1-5', command: 'echo foo' }
-    { cronTime: '10 23 0-23/2 * * *', command: 'echo bar 1>&2' }
-    { cronTime: '* * * * * *', command: 'echo baz && exit 10' }
-    echo baz && exit 10 | stdout: baz
-    echo baz && exit 10 | stderr: 
-    echo baz && exit 10 | exited with code 10
+    $ CRON_JS_MAILTO=user@example.com ./bin/cron crontab.test
+    { cronTime: '*/10 * * * * *',
+    command: 'echo CRONJOB.mbp `date`' }
+    2017-06-13T04:24:40.743Z | echo CRONJOB.mbp `date` | stdout: CRONJOB.mbp Tue Jun 13 13:24:40 JST 2017
+    2017-06-13T04:24:40.743Z | echo CRONJOB.mbp `date` | stderr:
+    2017-06-13T04:24:40.743Z | echo CRONJOB.mbp `date` | exited
+    2017-06-13T04:24:40.743Z | echo CRONJOB.mbp `date` | Sending email to user@example.com
+    2017-06-13T04:24:50.741Z | echo CRONJOB.mbp `date` | stdout: CRONJOB.mbp Tue Jun 13 13:24:50 JST 2017
+    2017-06-13T04:24:50.741Z | echo CRONJOB.mbp `date` | stderr:
+    2017-06-13T04:24:50.741Z | echo CRONJOB.mbp `date` | exited
+    2017-06-13T04:24:50.741Z | echo CRONJOB.mbp `date` | Sending email to user@example.com
     ...
 
 
 Usage
 -----
 
-### Commandline Options
+### Command Usage
 
-    $ cron [--exit-on-failure] [--timezone <timeZone>] <crontab>
+    $ [<EMAIL_OPTIONS= > ...] cron [--exit-on-failure] [--timezone <timeZone>] [<email options> ...] <crontab>
 
-| Option | Default  | Description |
-| ------ | -------- | ----------- |
-| `--exit-on-failure` | (None) | When given and any of jobs ends with status code other than 0, exit cron program with that status code |
-| `--timezone <timeZone>` | (None) | When given, set timezone for cron jobs |
+| Arguments | Required  | Description |
+| --------- | --------- | ----------- |
+| `<crontab>` | Yes | crontab file that defines jobs to schedule, one per line
+| `--exit-on-failure` | No | When given and any of jobs ends with status code other than 0, exit cron program with that status code |
+| `--timezone <timeZone>` | No | When given, set timezone for cron jobs |
+| `--mailto <address>`, `--smtp-host <host>`, `--smtp-port <port>`, `--smtp-user <user>`, `--smtp-pass <password>` | No | Email notifiction options: see below for details |
 
 
 
@@ -71,6 +80,35 @@ Jobs are scheduled with [node-cron](https://www.npmjs.com/package/cron),
 so see its document for details about available cron time format.
 
 Specifying environment variables in crontab file is not supported.
+
+
+
+### Email Options
+
+Following email options are supported.
+
+Email options can be also passed via environment vairbles.
+When both are provided, values given in commandline argument always
+take precedence.
+
+| Arguments | Environment Variable | Description |
+| --------- | -------------------- | ----------- |
+| `--mailto <address>` | `CRON_JS_MAILTO` | Email address to send result to
+| `--smtp-host <host>` | `CRON_JS_SMTP_HOST` | SMTP host to use to send emails
+| `--smtp-port <port>` | `CRON_JS_SMTP_PORT` | SMTP port to use to send emails
+| `--smtp-user <user>` | `CRON_JS_SMTP_USER` | SMTP username to use to send emails
+| `--smtp-pass <password>` | `CRON_JS_SMTP_PASS` | SMTP password to use to send emails
+
+
+There are two email "mode" for `cron`:
+
+- When only `--mailto` (or `CRON_JS_MAILTO`) is given of these email options,
+ `cron` works in "sendmail" mode.
+In this mode, cron-js tries to send emails via locally installed `sendmail`
+command.
+
+- If any of SMTP options are given, `cron` works in "SMTP" mode.
+In this mode, cron-js tries to send emails using provided STMP configurations.
 
 
 
