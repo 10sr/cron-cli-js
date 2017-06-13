@@ -61,7 +61,7 @@ Usage
 | --------- | --------- | ----------- |
 | `<crontab>` | Yes | crontab file that defines jobs to schedule, one per line
 | `--exit-on-failure` | No | When given and any of jobs ends with status code other than 0, exit cron program with that status code |
-| `--timezone <timeZone>` | No | When given, set timezone for cron jobs |
+| `--timezone <timeZone>` | No | When given, set timezone for cron job definitions |
 | `--mailto <address>`, `--smtp-host <host>`, `--smtp-port <port>`, `--smtp-user <user>`, `--smtp-pass <password>` | No | Email notifiction options: see below for details |
 
 
