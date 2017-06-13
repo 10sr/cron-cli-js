@@ -14,10 +14,28 @@ function main(argv){
     var exitOnFailure = opts["exit-on-failure"];
     var timeZone = opts["timezone"];
 
+    // Mail configurations
+    var mailto = opts["mailto"] || process.env.CRON_JS_MAILTO;
+    var smtpHost = opts["smtp-host"] || process.env.CRON_JS_SMTP_HOST || null;
+    var smtpPort = parseInt(
+        opts["smtp-port"] || process.env.CRON_JS_SMTP_PORT || null,
+        10
+    );
+    var smtpUser = opts["smtp-user"] || process.env.CRON_JS_SMTP_USER || null;
+    var smtpPass = opts["smtp-pass"] || process.env.CRON_JS_SMTP_PASS || null;
+
+    var smtpSecure = (smtpPort === 465);
+
     var cron = require("../lib");
     cron.start(crontab, {
         exitOnFailure: exitOnFailure,
-        timeZone: timeZone
+        timeZone: timeZone,
+        mailto: mailto,
+        smtpHost: smtpHost,
+        smtpPort: smtpPort,
+        smtpSecure: smtpSecure,
+        smtpUser: smtpUser,
+        smtpPass: smtpPass
     })
     return;
 }
