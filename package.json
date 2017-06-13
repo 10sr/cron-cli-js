@@ -29,8 +29,8 @@
     "test": "make check"
   },
   "dependencies": {
+    "argparse": "^1.0.9",
     "cron": "^1.2.1",
-    "minimist": "^1.2.0",
     "nodemailer": "^4.0.1"
   },
   "engines": {
