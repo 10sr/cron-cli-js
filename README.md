@@ -43,6 +43,13 @@ And start cron in foreground with that crontab file:
     ...
 
 
+Requirement
+-----------
+
+- Nodejs >= 6.0
+
+
+
 Usage
 -----
 
