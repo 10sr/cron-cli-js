@@ -31,6 +31,7 @@
   "dependencies": {
     "argparse": "^1.0.9",
     "cron": "^1.2.1",
+    "log4js": "^1.1.1",
     "nodemailer": "^4.0.1"
   },
   "engines": {
