@@ -7,15 +7,28 @@
 
 
 
-cron-cli-js
-========
+CRON_JS
+=======
 
-Cron command implemented in Nodejs
+Simple cron command implementation in Nodejs
 
 
+* Define job schedules in standard crontab-like format
+  * Extended to support seconds digit
+* No "daemon mode": all status informations are printed to stdout,
+including outputs of executed jobs
+* Support email for sending job results: both sendmail command and SMTP
+are supported
 
-Overview
---------
+
+Requirement
+-----------
+
+* Nodejs >= 6.0
+
+
+Usage Example
+-------------
 
 Write your crontab file as:
 
@@ -43,15 +56,9 @@ And start cron in foreground with that crontab file:
     ...
 
 
-Requirement
------------
 
-- Nodejs >= 6.0
-
-
-
-Usage
------
+Arguments
+---------
 
 ### Command Usage
 
@@ -111,11 +118,11 @@ There are two email "mode" for `cron`:
 
 - When only `--mailto` (or `CRON_JS_MAILTO`) is given of these email options,
  `cron` works in "sendmail" mode.
-In this mode, cron-js tries to send emails via locally installed `sendmail`
+In this mode, `cron` tries to send emails via locally installed `sendmail`
 command.
 
-- If any of SMTP options are given, `cron` works in "SMTP" mode.
-In this mode, cron-js tries to send emails using provided STMP configurations.
+- If any of SMTP options are given, `cron` works in "SMTP" mode,
+where `cron` tries to send emails using provided STMP configurations.
 
 
 

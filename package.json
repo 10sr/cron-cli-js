@@ -1,7 +1,7 @@
 {
   "name": "cron-cli",
   "version": "0.3.1",
-  "description": "Nodejs cron command",
+  "description": "Simple cron command implementation in Nodejs",
   "author": "10sr",
   "license": "Apache-2.0",
   "homepage": "https://github.com/10sr/cron-cli-js#readme",
