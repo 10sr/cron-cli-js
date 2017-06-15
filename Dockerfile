@@ -1,7 +1,7 @@
 FROM node:8.0.0-alpine
 
 LABEL maintainer="https://github.com/10sr/cron-cli-js" \
-      description="Nodejs Cron Command"
+      description="Simple cron command implementation in Nodejs"
 
 RUN apk add --update tini && rm -rf /var/cache/apk/*
 
