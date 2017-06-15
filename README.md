@@ -42,17 +42,22 @@ And start cron in foreground with that crontab file:
 `cron` sends all job outputs to stdout, and also send them to
 `user@example.com`.
 
-    $ CRON_JS_MAILTO=user@example.com ./bin/cron crontab.test
-    { cronTime: '*/10 * * * * *',
-    command: 'echo CRONJOB.mbp `date`' }
-    2017-06-13T04:24:40.743Z | echo CRONJOB.mbp `date` | stdout: CRONJOB.mbp Tue Jun 13 13:24:40 JST 2017
-    2017-06-13T04:24:40.743Z | echo CRONJOB.mbp `date` | stderr:
-    2017-06-13T04:24:40.743Z | echo CRONJOB.mbp `date` | exited
-    2017-06-13T04:24:40.743Z | echo CRONJOB.mbp `date` | Sending email to user@example.com
-    2017-06-13T04:24:50.741Z | echo CRONJOB.mbp `date` | stdout: CRONJOB.mbp Tue Jun 13 13:24:50 JST 2017
-    2017-06-13T04:24:50.741Z | echo CRONJOB.mbp `date` | stderr:
-    2017-06-13T04:24:50.741Z | echo CRONJOB.mbp `date` | exited
-    2017-06-13T04:24:50.741Z | echo CRONJOB.mbp `date` | Sending email to user@example.com
+    $ CRON_JS_MAILTO=user@example.com cron ./crontab
+    [2017-06-15 10:53:09.407] [INFO] [default] - Setting up email notification
+    [2017-06-15 10:53:09.411] [INFO] [default] - Sender: admin@example.com
+    [2017-06-15 10:53:09.411] [INFO] [default] - Mailto: user@example.com
+    [2017-06-15 10:53:09.411] [INFO] [default] - Use sendmail to send emails
+    [2017-06-15 10:53:09.432] [INFO] [default] - Job registered: {"cronTime":"*/10 * * * * *","command":"echo CRONJOB.mbp `date`"}
+    [2017-06-15 10:53:10.441] [INFO] [default] - echo CRONJOB.mbp `date` (pid=67086) | Started.
+    [2017-06-15 10:53:10.449] [INFO] [default] - echo CRONJOB.mbp `date` (pid=67086) | Stdout: CRONJOB.mbp Thu Jun 15 10:53:10 JST 2017
+    [2017-06-15 10:53:10.449] [INFO] [default] - echo CRONJOB.mbp `date` (pid=67086) | Stderr: 
+    [2017-06-15 10:53:10.449] [INFO] [default] - echo CRONJOB.mbp `date` (pid=67086) | Exited with code 0
+    [2017-06-15 10:53:10.449] [DEBUG] [default] - echo CRONJOB.mbp `date` (pid=67086) | Sending email to user@example.com
+    [2017-06-15 10:53:20.439] [INFO] [default] - echo CRONJOB.mbp `date` (pid=67139) | Started.
+    [2017-06-15 10:53:20.448] [INFO] [default] - echo CRONJOB.mbp `date` (pid=67139) | Stdout: CRONJOB.mbp Thu Jun 15 10:53:20 JST 2017
+    [2017-06-15 10:53:20.448] [INFO] [default] - echo CRONJOB.mbp `date` (pid=67139) | Stderr: 
+    [2017-06-15 10:53:20.448] [INFO] [default] - echo CRONJOB.mbp `date` (pid=67139) | Exited with code 0
+    [2017-06-15 10:53:20.449] [DEBUG] [default] - echo CRONJOB.mbp `date` (pid=67139) | Sending email to user@example.com
     ...
 
 
